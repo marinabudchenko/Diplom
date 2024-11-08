@@ -19,9 +19,12 @@ def driver():
 @allure.story("Поиск")
 @allure.feature("Позитивные тесты")
 @allure.severity("blocker")
-@pytest.mark.parametrize("name", [    ("Хоббит"),
-    ("преступление и наказание"),    ("1+1"),
-    ("И снова здравствуйте!")])
+@pytest.mark.parametrize("name", [
+    ("Призрачный гонщик"),
+    ("Дневники вампиров"),
+    ("1+1"),
+    ("Великолепный век"),
+    ("Джокер")])
 def test_search_possitive(driver, name):
     driver.get("https://www.kinopoisk.ru/")
     driver.find_element(By.CSS_SELECTOR, "input[name=kp_query]").send_keys(name)
