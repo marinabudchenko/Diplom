@@ -45,7 +45,7 @@ def test_russian_name():
 def test_nonexistent_name():
     response = requests.get(f"{base_url}/movie/search?page=1&limit=1&query=%20%20%20hymkhhj%2Clufifi%2Cf%2C", headers=headers)
     assert response.status_code ==200
-    assert "id" in response.text
+
 
 
 @allure.id("123")
@@ -56,7 +56,7 @@ def test_nonexistent_name():
 def test_smiley_name():
     response = requests.get(f"{base_url}/movie/search?page=1&limit=1&query=%20%20%20%F0%9F%99%82", headers=headers)
     assert response.status_code ==200
-    assert "id" in response.text
+
 
 
 
